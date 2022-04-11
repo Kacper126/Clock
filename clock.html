@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="clock.css" rel="stylesheet"/>
+    <link href="images/clockIcon.ico" rel="icon">
+    <title>Clock</title>
+</head>
+<body>
+    <section>
+        <div class="area"></div>
+        <div id="clock">
+            <p id="clock_time"></p>
+        </div>
+        <div class="area"></div>
+    </section>
+    
+
+    <script>
+        var p = document.querySelector("#clock_time");
+
+        var d = new Date();
+        let hours = d.getHours();
+        let minutes = d.getMinutes();
+        let seconds = d.getSeconds();
+
+        p.innerHTML = hours + ':' + minutes + ':' + seconds;
+
+
+        
+
+        const updateTime = () => {
+            let d2 = new Date();
+            let hours = d2.getHours();
+            let minutes = d2.getMinutes();
+            let seconds = d2.getSeconds();
+            p.innerHTML = hours + ':' + minutes + ':' + seconds;
+        }
+
+        setInterval(updateTime, 1000);
+
+
+    </script>
+</body>
+</html>
